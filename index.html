@@ -3,7 +3,7 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#080d1b">
 <title>LinkGate Ultra</title>
 
@@ -11,812 +11,1471 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
- --bg:#080d1b;
- --panel:#111a2e;
- --border:#293a58;
- --text:#f8fafc;
- --muted:#91a1ba;
- --blue:#5687ff;
- --green:#19cb91;
+  --bg:#080d1b;
+  --panel:#111a2e;
+  --border:#293a58;
+  --text:#f8fafc;
+  --muted:#91a1ba;
+  --blue:#5687ff;
+  --green:#19cb91;
+  --red:#ff607d;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
 
 body{
- min-height:100vh;
- padding:20px;
- display:flex;
- align-items:center;
- justify-content:center;
- font-family:Inter,Arial,sans-serif;
- color:var(--text);
- background:
- radial-gradient(ellipse at 15% 5%,#1c3158,transparent 45%),
- var(--bg);
+  min-height:100vh;
+  padding:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Inter,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(ellipse at 15% 5%,#1c3158,transparent 45%),
+    radial-gradient(ellipse at 90% 90%,#251747,transparent 40%),
+    var(--bg);
 }
 
 .container{
- width:100%;
- max-width:540px;
- padding:30px;
- border:1px solid #26354c;
- border-radius:24px;
- background:rgba(17,26,46,.97);
- box-shadow:0 25px 80px #0008;
+  width:100%;
+  max-width:650px;
+  padding:28px;
+  border:1px solid #26354c;
+  border-radius:24px;
+  background:rgba(17,26,46,.97);
+  box-shadow:0 25px 80px #0008;
+  animation:appear .65s ease both;
+}
+
+@keyframes appear{
+  from{opacity:0;transform:translateY(25px) scale(.98)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(15px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg)}
 }
 
 .logo{
- text-align:center;
- font-size:36px;
- font-weight:900;
- letter-spacing:-2px;
- background:linear-gradient(110deg,#72b5ff,#7585ff,#bb79ff);
- color:transparent;
- background-clip:text;
+  text-align:center;
+  font-size:38px;
+  font-weight:900;
+  letter-spacing:-2px;
+  background:linear-gradient(110deg,#72b5ff,#7585ff,#bb79ff);
+  color:transparent;
+  background-clip:text;
 }
 
 .subtitle{
- text-align:center;
- color:#8193b3;
- font-size:10px;
- font-weight:800;
- letter-spacing:4px;
- margin:8px 0 30px;
+  text-align:center;
+  color:#8193b3;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:4px;
+  margin:8px 0 27px;
 }
 
 h2{
- text-align:center;
- font-size:22px;
- margin-bottom:10px;
+  text-align:center;
+  font-size:22px;
+  margin:10px 0;
 }
 
 .desc{
- text-align:center;
- color:var(--muted);
- font-size:12px;
- line-height:1.7;
- margin-bottom:23px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8;
+  margin-bottom:20px;
 }
 
 .label{
- display:block;
- color:#c5d2e7;
- font-size:11px;
- font-weight:800;
- margin:15px 0 7px;
+  display:block;
+  color:#c5d2e7;
+  font-size:11px;
+  font-weight:800;
+  margin:15px 0 7px;
 }
 
-input,select{
- width:100%;
- height:49px;
- padding:0 14px;
- background:#0a1325;
- color:white;
- border:1px solid var(--border);
- border-radius:11px;
- font-size:13px;
- outline:none;
+input{
+  width:100%;
+  height:47px;
+  padding:0 13px;
+  background:#0a1325;
+  color:white;
+  border:1px solid var(--border);
+  border-radius:10px;
+  font-size:13px;
+  outline:none;
+  margin-top:5px;
 }
 
-input:focus,select:focus{
- border-color:var(--blue);
-}
+input:focus{border-color:var(--blue)}
 
 button{
- width:100%;
- min-height:48px;
- margin-top:12px;
- border:0;
- border-radius:11px;
- color:white;
- font-size:13px;
- font-weight:800;
- cursor:pointer;
+  min-height:43px;
+  padding:11px 15px;
+  border:0;
+  border-radius:10px;
+  color:white;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.2s;
+}
+
+button:hover:not(:disabled){
+  filter:brightness(1.15);
+  transform:translateY(-2px);
 }
 
 button:disabled{
- opacity:.5;
- cursor:not-allowed;
+  opacity:.5;
+  cursor:not-allowed;
 }
 
-.primary{
- background:linear-gradient(110deg,#377df4,#7459f0);
-}
-
-.success{
- background:linear-gradient(110deg,#0bbd88,#12a77a);
-}
-
-.copy{background:#087da9}
+.primary{background:linear-gradient(110deg,#377df4,#7459f0)}
+.success{background:linear-gradient(110deg,#0bbd88,#12a77a)}
 .danger{background:#a8324b}
 .secondary{background:#293a58}
+.copy{background:#087da9}
+.full{width:100%;margin-top:12px}
+
+.tabs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+  margin:20px 0;
+}
+
+.tab{
+  background:#0a1325;
+  color:#91a1ba;
+  border:1px solid var(--border);
+}
+
+.tab.active{
+  background:#1c3158;
+  color:#91b6ff;
+  border-color:#5687ff;
+}
 
 .mode-box{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:10px;
- margin:15px 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:18px 0;
 }
 
 .mode-option{
- padding:15px 10px;
- background:#0a1325;
- border:1px solid var(--border);
- border-radius:12px;
- cursor:pointer;
- text-align:center;
- font-size:12px;
- font-weight:800;
+  padding:17px 8px;
+  background:#0a1325;
+  border:1px solid var(--border);
+  border-radius:12px;
+  cursor:pointer;
+  text-align:center;
+  font-size:12px;
+  font-weight:800;
 }
 
 .mode-option.active{
- border-color:#5687ff;
- background:#17294b;
- color:#91b6ff;
+  border-color:#5687ff;
+  background:#17294b;
+  color:#91b6ff;
 }
 
-.mode-option input{
- width:auto;
- height:auto;
- margin:0 5px 0 0;
+.mode-option small{
+  display:block;
+  color:#91a1ba;
+  margin-top:7px;
+  font-size:10px;
+  font-weight:500;
 }
 
-.link-row{
- background:#0a1427;
- border:1px solid var(--border);
- border-radius:12px;
- padding:13px;
- margin-top:12px;
+.card,.link-item{
+  background:#0a1427;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:15px;
+  margin:12px 0;
+  animation:fade .35s ease both;
 }
 
-.link-row button{
- margin-top:9px;
+.row{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap;
 }
 
-.result{
- display:none;
- margin-top:18px;
- padding:16px;
- background:#0a1427;
- border:1px solid var(--border);
- border-radius:12px;
-}
-
-.result b{
- display:block;
- color:#91b6ff;
- font-size:12px;
- margin-bottom:10px;
-}
-
-.note{
- padding:14px;
- margin:17px 0;
- background:#1a2a45;
- border-left:3px solid var(--blue);
- border-radius:8px;
- font-size:12px;
- line-height:1.7;
- color:#c5d5f1;
-}
+.row>*{flex:1;min-width:0}
 
 .message{
- text-align:center;
- font-size:12px;
- margin-top:13px;
- line-height:1.7;
- color:var(--muted);
+  text-align:center;
+  font-size:12px;
+  margin-top:12px;
+  line-height:1.7;
+  color:var(--muted);
+  overflow-wrap:anywhere;
 }
 
 .error{color:#ff7088}
 .ok{color:#36e4ae}
 
-.footer{
- margin-top:25px;
- padding-top:15px;
- border-top:1px solid var(--border);
- text-align:center;
- color:#62738f;
- font-size:10px;
+.note{
+  padding:14px;
+  margin:15px 0;
+  background:#1a2a45;
+  border-left:3px solid var(--blue);
+  border-radius:8px;
+  font-size:12px;
+  line-height:1.7;
+  color:#c5d5f1;
 }
 
-.owner{
- text-align:center;
- font-size:23px;
- font-weight:900;
- overflow-wrap:anywhere;
- margin:10px 0;
- color:#fff;
+.small{
+  font-size:11px;
+  color:var(--muted);
+  overflow-wrap:anywhere;
+  margin:7px 0;
 }
+
+.result{
+  display:none;
+  background:#0a1427;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:15px;
+  margin-top:17px;
+  animation:fade .4s;
+}
+
+.result b{color:#91b6ff;font-size:12px}
+
+.link-item b{font-size:13px}
 
 .public-links{
- display:flex;
- flex-direction:column;
- gap:13px;
- margin-top:25px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:22px;
 }
 
 .public-link{
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:10px;
- padding:17px;
- border:1px solid #34496c;
- border-radius:13px;
- background:linear-gradient(110deg,#172944,#101b32);
- text-decoration:none;
- color:white;
- font-size:13px;
- font-weight:800;
- transition:.2s;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:17px;
+  border:1px solid #34496c;
+  border-radius:13px;
+  background:linear-gradient(110deg,#172944,#101b32);
+  text-decoration:none;
+  color:white;
+  font-size:13px;
+  font-weight:800;
+  transition:.2s;
 }
 
 .public-link:hover{
- border-color:#5687ff;
- transform:translateY(-2px);
+  border-color:#5687ff;
+  transform:translateY(-2px);
 }
 
-.public-link span:last-child{
- color:#83aaff;
- font-size:18px;
+.public-link span:last-child{color:#83aaff}
+
+.footer{
+  margin-top:25px;
+  padding-top:15px;
+  border-top:1px solid var(--border);
+  text-align:center;
+  color:#62738f;
+  font-size:10px;
 }
 
-.ad-overlay{
- display:none;
- position:fixed;
- inset:0;
- z-index:9999;
- align-items:center;
- justify-content:center;
- padding:20px;
- background:rgba(0,0,0,.94);
- backdrop-filter:blur(10px);
+.spinner{
+  width:35px;
+  height:35px;
+  border:3px solid #293a58;
+  border-top-color:#72b5ff;
+  border-radius:50%;
+  animation:spin .8s linear infinite;
+  margin:0 auto 14px;
 }
 
-.ad-overlay.show{display:flex}
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:#050914f5;
+  backdrop-filter:blur(12px);
+}
+
+.overlay.show{
+  display:flex;
+  animation:fade .4s;
+}
 
 .ad-card{
- width:100%;
- max-width:400px;
- padding:20px;
- border:1px solid #40516f;
- border-radius:18px;
- background:#111a2e;
- text-align:center;
-}
-
-.ad-title{
- font-size:18px;
- font-weight:800;
- margin-bottom:12px;
+  width:100%;
+  max-width:400px;
+  padding:25px;
+  border:1px solid #40516f;
+  border-radius:18px;
+  background:#111a2e;
+  text-align:center;
+  animation:appear .5s;
 }
 
 .ad-button{
- display:block;
- padding:14px;
- margin-top:15px;
- background:linear-gradient(110deg,#377df4,#7459f0);
- border-radius:10px;
- color:white;
- text-decoration:none;
- font-size:13px;
- font-weight:800;
+  display:block;
+  padding:15px;
+  margin-top:15px;
+  background:linear-gradient(110deg,#377df4,#7459f0);
+  border-radius:10px;
+  color:white;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:800;
 }
 
-.continue{display:none;background:#16a77c}
+.progress{
+  height:5px;
+  background:#293a58;
+  border-radius:20px;
+  overflow:hidden;
+  margin:15px 0;
+}
+
+.progress div{
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#5687ff,#19cb91);
+  transition:width .3s;
+}
+
+.continue{
+  display:none;
+  background:#16a77c;
+  width:100%;
+  margin-top:12px;
+}
+
 .continue.show{display:block}
 
+.hidden{display:none!important}
+
 @media(max-width:480px){
- .container{padding:23px 18px}
- .logo{font-size:32px}
- .mode-box{grid-template-columns:1fr}
+  .container{padding:22px 17px}
+  .logo{font-size:32px}
+  .mode-box{grid-template-columns:1fr}
 }
 </style>
 </head>
 
 <body>
 
-<main class="container" id="app"></main>
+<main class="container" id="app">
+  <div style="text-align:center;padding:35px">
+    <div class="spinner"></div>
+    Đang kết nối LinkGate...
+  </div>
+</main>
 
-<div class="ad-overlay" id="adOverlay">
- <div class="ad-card">
-  <div class="subtitle">SPONSORED ADVERTISEMENT</div>
-  <div class="ad-title">Quảng cáo tài trợ</div>
-  <a class="ad-button" id="adVisit"
-     target="_blank"
-     rel="sponsored noopener noreferrer">
-     XEM QUẢNG CÁO
-  </a>
-  <div class="message" id="adCount"></div>
-  <button class="continue" id="continueBtn">
-   TIẾP TỤC XÁC THỰC
-  </button>
- </div>
+<div class="overlay" id="adOverlay">
+  <div class="ad-card">
+    <div class="subtitle">LINKGATE ULTRA</div>
+    <h2>Quảng cáo tài trợ</h2>
+    <p class="desc">Mở liên kết quảng cáo và chờ hoàn tất thời gian xác thực.</p>
+
+    <a class="ad-button" id="adVisit"
+       target="_blank"
+       rel="sponsored noopener noreferrer">
+       ↗ XEM QUẢNG CÁO
+    </a>
+
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+
+    <div class="message" id="adCount"></div>
+
+    <button class="continue" id="continueBtn">
+      TIẾP TỤC XÁC THỰC
+    </button>
+  </div>
 </div>
 
-<script>
-"use strict";
+<script type="module">
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-const app=document.getElementById("app");
-const params=new URLSearchParams(location.search);
-const encoded=params.get("d");
+import {
+  getFirestore,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  query,
+  orderBy,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-const AD_WAIT=8;
+/* ==================================
+   FIREBASE CONFIG
+================================== */
 
-function validURL(value){
- try{
-  const u=new URL(value);
-  return ["http:","https:"].includes(u.protocol);
- }catch{return false}
+const firebaseConfig = {
+  apiKey: "AIzaSyDDCFAzI1OlCGKYQJVgy21X_pLlUqvjrU",
+  authDomain: "linkgate-ultra.firebaseapp.com",
+  projectId: "linkgate-ultra",
+  storageBucket: "linkgate-ultra.firebasestorage.app",
+  messagingSenderId: "546664473422",
+  appId: "1:546664473422:web:1d99450a6bb014317a341f",
+  measurementId: "G-EB6NFMLMXL"
+};
+
+/* ==================================
+   KHỞI TẠO
+================================== */
+
+const app = document.getElementById("app");
+const params = new URLSearchParams(location.search);
+const linkId = params.get("id");
+
+const WAIT_SECONDS = 8;
+
+let db = null;
+let selectedMode = "normal";
+let currentEditId = null;
+let currentEditData = null;
+
+const $ = id => document.getElementById(id);
+
+function validURL(value) {
+  try {
+    const u = new URL(value);
+    return u.protocol === "https:" || u.protocol === "http:";
+  } catch {
+    return false;
+  }
 }
 
-function encodeData(data){
- const bytes=new TextEncoder().encode(JSON.stringify(data));
- let binary="";
- bytes.forEach(b=>binary+=String.fromCharCode(b));
-
- return btoa(binary)
-  .replace(/\+/g,"-")
-  .replace(/\//g,"_")
-  .replace(/=+$/g,"");
+function makeMessage(text, type = "message") {
+  const p = document.createElement("p");
+  p.className = type;
+  p.textContent = text;
+  return p;
 }
 
-function decodeData(value){
- if(!/^[A-Za-z0-9_-]+$/.test(value))throw Error();
+function makeField(label, placeholder, type = "text", value = "") {
+  const wrap = document.createElement("div");
 
- const base=value.replace(/-/g,"+").replace(/_/g,"/");
- const binary=atob(base);
- const bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
+  const l = document.createElement("label");
+  l.className = "label";
+  l.textContent = label;
 
- return JSON.parse(new TextDecoder().decode(bytes));
+  const input = document.createElement("input");
+  input.type = type;
+  input.placeholder = placeholder;
+  input.value = value;
+
+  wrap.append(l, input);
+
+  return { wrap, input };
 }
 
-function el(tag,text,parent=app,cls=""){
- const node=document.createElement(tag);
- node.textContent=text;
- if(cls)node.className=cls;
- parent.appendChild(node);
- return node;
+function makeButton(text, cls, callback, parent = app) {
+  const b = document.createElement("button");
+  b.type = "button";
+  b.className = cls;
+  b.textContent = text;
+  b.addEventListener("click", callback);
+  parent.appendChild(b);
+  return b;
 }
 
-function field(label,placeholder,type="text",parent=app){
- el("label",label,parent,"label");
-
- const node=document.createElement("input");
- node.placeholder=placeholder;
- node.type=type;
- node.autocomplete="off";
-
- parent.appendChild(node);
- return node;
+function header() {
+  app.innerHTML = `
+    <div class="logo">LINKGATE</div>
+    <div class="subtitle">SMART LINK GATEWAY</div>
+  `;
 }
 
-function btn(text,cls,callback,parent=app){
- const node=document.createElement("button");
- node.textContent=text;
- node.className=cls;
- node.type="button";
- node.onclick=callback;
- parent.appendChild(node);
- return node;
+function footer() {
+  const f = document.createElement("div");
+  f.className = "footer";
+  f.textContent = "LINKGATE ULTRA • POWERED BY FIREBASE";
+  app.appendChild(f);
 }
 
-function header(){
- el("div","LINKGATE",app,"logo");
- el("div","SMART LINK GATEWAY",app,"subtitle");
+function showLoading(text) {
+  app.innerHTML = `
+    <div style="text-align:center;padding:40px">
+      <div class="spinner"></div>
+      <p class="message">${text}</p>
+    </div>
+  `;
 }
 
-function footer(){
- el("div","LINKGATE ULTRA • GITHUB PAGES",app,"footer");
+function showError(text) {
+  app.innerHTML = "";
+  header();
+  app.appendChild(makeMessage(text, "message error"));
+
+  makeButton(
+    "QUAY LẠI TRANG CHỦ",
+    "primary full",
+    () => location.href = location.pathname
+  );
+
+  footer();
 }
 
-/* =========================
-   TRANG TẠO LINK
-========================= */
+function errorText(error) {
+  const code = error?.code || "";
 
-function renderCreator(){
- app.innerHTML="";
- header();
-
- el("h2","Tạo liên kết mới");
- el("p","Chọn chế độ liên kết mà bạn muốn tạo.",app,"desc");
-
- let mode="normal";
-
- const modeBox=el("div","",app,"mode-box");
-
- function modeOption(value,title,description){
-  const label=document.createElement("label");
-  label.className="mode-option"+(mode===value?" active":"");
-
-  const radio=document.createElement("input");
-  radio.type="radio";
-  radio.name="linkMode";
-  radio.value=value;
-  radio.checked=mode===value;
-
-  const titleNode=document.createElement("div");
-  titleNode.textContent=title;
-
-  const descNode=document.createElement("div");
-  descNode.textContent=description;
-  descNode.style.cssText="font-size:10px;color:#91a1ba;margin-top:7px";
-
-  label.append(radio,titleNode,descNode);
-  modeBox.appendChild(label);
-
-  radio.onchange=()=>{
-   mode=value;
-   renderCreator();
+  const errors = {
+    "permission-denied":
+      "Firestore chưa cấp quyền. Hãy kiểm tra Firestore Rules.",
+    "unavailable":
+      "Firebase không phản hồi. Kiểm tra mạng Internet.",
+    "not-found":
+      "Dữ liệu không tồn tại.",
+    "invalid-argument":
+      "Dữ liệu gửi lên Firebase không hợp lệ.",
+    "failed-precondition":
+      "Firestore chưa được cấu hình đúng."
   };
- }
 
- modeOption("normal","LINK BÌNH THƯỜNG","Danh sách nhiều link");
- modeOption("gate","LINK VƯỢT","Quảng cáo và mật khẩu");
-
- const owner=field("TÊN NGƯỜI SỞ HỮU","Nhập tên hiển thị");
-
- let password,video,ad;
- const rows=[];
-
- if(mode==="normal"){
-
-  el("div","DANH SÁCH LIÊN KẾT",app,"label");
-
-  const list=el("div","",app);
-
-  function addLink(name="",url=""){
-   const row=el("div","",list,"link-row");
-
-   const title=field("TÊN LIÊN KẾT","Ví dụ: Google Drive", "text",row);
-   title.value=name;
-
-   const address=field("URL ĐÍCH","https://...", "url",row);
-   address.value=url;
-
-   const remove=btn("✕ XÓA LIÊN KẾT","danger",()=>{
-    row.remove();
-    rows.splice(rows.indexOf(item),1);
-   },row);
-
-   const item={title,address,row};
-   rows.push(item);
-  }
-
-  btn("+ THÊM LIÊN KẾT","secondary",()=>addLink());
-
-  addLink();
-
- }else{
-
-  password=field("MẬT KHẨU XÁC THỰC","Nhập mật khẩu");
-  video=field("LINK VIDEO HƯỚNG DẪN","https://...");
-  ad=field("LINK QUẢNG CÁO","https://...");
-
-  const target=field("LINK TẢI ĐÍCH","https://...");
-  rows.push({title:{value:"Liên kết tải"},address:target});
- }
-
- const result=el("div","",app,"result");
-
- btn("✦ TẠO LINK NGAY","primary",()=>{
-  const name=owner.value.trim();
-
-  if(!name){
-   alert("Vui lòng nhập tên người sở hữu!");
-   return;
-  }
-
-  let data;
-
-  if(mode==="normal"){
-
-   const links=rows.map(item=>({
-    name:item.title.value.trim(),
-    url:item.address.value.trim()
-   }));
-
-   if(!links.length){
-    alert("Hãy thêm ít nhất một liên kết!");
-    return;
-   }
-
-   if(links.some(x=>!x.name||!validURL(x.url))){
-    alert("Vui lòng kiểm tra tên và URL của tất cả liên kết!");
-    return;
-   }
-
-   data={
-    mode:"normal",
-    owner:name,
-    links:links
-   };
-
-  }else{
-
-   const p=password.value.trim();
-   const v=video.value.trim();
-   const a=ad.value.trim();
-   const t=rows[0].address.value.trim();
-
-   if(!p||!validURL(v)||!validURL(a)||!validURL(t)){
-    alert("Vui lòng nhập đủ thông tin hợp lệ!");
-    return;
-   }
-
-   data={
-    mode:"gate",
-    owner:name,
-    p,t,v,a
-   };
-  }
-
-  const link=location.origin+location.pathname+
-   "?d="+encodeData(data);
-
-  result.style.display="block";
-  result.innerHTML="";
-
-  el("b","✓ LINK ĐÃ ĐƯỢC TẠO",result);
-
-  const output=document.createElement("input");
-  output.value=link;
-  output.readOnly=true;
-  output.style.marginTop="10px";
-  result.appendChild(output);
-
-  btn("SAO CHÉP LINK","copy",async()=>{
-   try{
-    await navigator.clipboard.writeText(link);
-    alert("Đã sao chép!");
-   }catch{
-    output.select();
-    document.execCommand("copy");
-   }
-  },result);
-
-  result.scrollIntoView({behavior:"smooth"});
- });
-
- footer();
+  return errors[code] || error?.message || "Đã xảy ra lỗi.";
 }
 
-/* =========================
-   TRANG DANH SÁCH LINK
-========================= */
+async function hashPassword(value) {
+  const bytes = await crypto.subtle.digest(
+    "SHA-256",
+    new TextEncoder().encode(value)
+  );
 
-function renderDirect(data){
-
- app.innerHTML="";
- header();
-
- el("div",data.owner,app,"owner");
-
- el(
-  "p",
-  "DANH SÁCH LIÊN KẾT",
-  app,
-  "desc"
- );
-
- el(
-  "p",
-  "Chọn liên kết bạn muốn truy cập.",
-  app,
-  "message"
- );
-
- const list=el("div","",app,"public-links");
-
- data.links.forEach(item=>{
-
-  const a=document.createElement("a");
-
-  a.href=item.url;
-  a.target="_blank";
-  a.rel="noopener noreferrer";
-  a.className="public-link";
-
-  const name=document.createElement("span");
-  name.textContent=item.name;
-
-  const arrow=document.createElement("span");
-  arrow.textContent="↗";
-
-  a.append(name,arrow);
-  list.appendChild(a);
-
- });
-
- footer();
+  return Array.from(new Uint8Array(bytes))
+    .map(x => x.toString(16).padStart(2, "0"))
+    .join("");
 }
 
-/* =========================
-   QUẢNG CÁO
-========================= */
+/* ==================================
+   TẠO HEADER TRANG QUẢN LÝ
+================================== */
 
-function showAdvertisement(data){
+function renderHome() {
+  header();
 
- const overlay=document.getElementById("adOverlay");
- const visit=document.getElementById("adVisit");
- const count=document.getElementById("adCount");
- const continueBtn=document.getElementById("continueBtn");
+  const h = document.createElement("h2");
+  h.textContent = "Bảng điều khiển";
+  app.appendChild(h);
 
- visit.href=data.a;
- overlay.classList.add("show");
+  app.appendChild(
+    makeMessage("Tạo và quản lý tất cả liên kết của bạn.", "desc")
+  );
 
- let remaining=AD_WAIT;
- count.textContent="Vui lòng chờ "+remaining+" giây.";
+  const tabs = document.createElement("div");
+  tabs.className = "tabs";
 
- const timer=setInterval(()=>{
-  remaining--;
+  const createTab = document.createElement("button");
+  createTab.className = "tab active";
+  createTab.textContent = "✦ TẠO LINK";
 
-  if(remaining<=0){
-   clearInterval(timer);
-   count.textContent="Bạn có thể tiếp tục.";
-   continueBtn.classList.add("show");
-  }else{
-   count.textContent="Vui lòng chờ "+remaining+" giây.";
+  const historyTab = document.createElement("button");
+  historyTab.className = "tab";
+  historyTab.textContent = "▤ LỊCH SỬ";
+
+  tabs.append(createTab, historyTab);
+  app.appendChild(tabs);
+
+  const area = document.createElement("div");
+  app.appendChild(area);
+
+  function switchTab(mode) {
+    createTab.classList.toggle("active", mode === "create");
+    historyTab.classList.toggle("active", mode === "history");
+
+    if (mode === "create") {
+      renderCreator(area);
+    } else {
+      renderHistory(area);
+    }
   }
- },1000);
 
- continueBtn.onclick=()=>{
-  clearInterval(timer);
-  overlay.classList.remove("show");
-  renderGate(data);
- };
+  createTab.onclick = () => switchTab("create");
+  historyTab.onclick = () => switchTab("history");
+
+  renderCreator(area);
+  footer();
 }
 
-/* =========================
-   TRANG VƯỢT LINK
-========================= */
+/* ==================================
+   TRANG TẠO LINK
+================================== */
 
-function renderGate(data){
+function renderCreator(area) {
+  currentEditId = null;
+  currentEditData = null;
+  area.innerHTML = "";
 
- app.innerHTML="";
- header();
+  const modeBox = document.createElement("div");
+  modeBox.className = "mode-box";
 
- el("h2","Xác thực liên kết");
- el("p","Xem video hướng dẫn và nhập mật khẩu để tiếp tục.",app,"desc");
+  const normal = document.createElement("div");
+  normal.className = "mode-option active";
+  normal.innerHTML = `
+    LINK BÌNH THƯỜNG
+    <small>Danh sách nhiều liên kết</small>
+  `;
 
- const video=document.createElement("a");
+  const gate = document.createElement("div");
+  gate.className = "mode-option";
+  gate.innerHTML = `
+    LINK VƯỢT
+    <small>Quảng cáo và mật khẩu</small>
+  `;
 
- video.href=data.v;
- video.target="_blank";
- video.rel="noopener noreferrer";
- video.className="success";
- video.style.display="block";
- video.style.textAlign="center";
- video.style.padding="16px";
- video.style.textDecoration="none";
- video.textContent="▶ XEM VIDEO HƯỚNG DẪN";
+  modeBox.append(normal, gate);
+  area.appendChild(modeBox);
 
- app.appendChild(video);
+  const owner = makeField(
+    "TÊN NGƯỜI SỞ HỮU",
+    "Nhập tên hiển thị"
+  );
 
- el("div","Vui lòng nhập mật khẩu chính xác để lấy liên kết.",app,"note");
+  area.appendChild(owner.wrap);
 
- const password=field(
-  "MẬT KHẨU XÁC THỰC",
-  "Nhập mật khẩu...",
-  "password"
- );
+  const form = document.createElement("div");
+  area.appendChild(form);
 
- const message=el("div","",app,"message");
+  const status = makeMessage("");
+  area.appendChild(status);
 
- let verified=false;
+  const result = document.createElement("div");
+  result.className = "result";
+  area.appendChild(result);
 
- function verify(){
+  let mode = "normal";
+  let rows = [];
+  let gateFields = null;
 
-  if(verified)return;
+  function addNormalRow(name = "", url = "") {
+    const card = document.createElement("div");
+    card.className = "card";
 
-  if(password.value===data.p){
+    const n = makeField(
+      "TÊN LIÊN KẾT",
+      "Ví dụ: Google Drive",
+      "text",
+      name
+    );
 
-   verified=true;
+    const u = makeField(
+      "URL ĐÍCH",
+      "https://...",
+      "url",
+      url
+    );
 
-   message.textContent="✓ Thành công! Đang chuyển hướng...";
-   message.className="message ok";
+    const remove = document.createElement("button");
+    remove.className = "danger full";
+    remove.textContent = "✕ XÓA LIÊN KẾT";
 
-   const link=document.createElement("a");
-   link.href=data.t;
-   link.textContent="Nhấn vào đây nếu không tự chuyển hướng";
-   link.style.display="block";
-   link.style.color="#82adff";
-   link.style.textAlign="center";
-   link.style.marginTop="15px";
+    const item = {
+      name: n.input,
+      url: u.input,
+      card
+    };
 
-   app.appendChild(link);
+    remove.onclick = () => {
+      rows = rows.filter(x => x !== item);
+      card.remove();
+    };
 
-   setTimeout(()=>location.assign(data.t),1200);
-
-  }else{
-
-   message.textContent="Mật khẩu không chính xác!";
-   message.className="message error";
-
-   password.value="";
-   password.focus();
+    card.append(n.wrap, u.wrap, remove);
+    form.appendChild(card);
+    rows.push(item);
   }
- }
 
- btn("✓ XÁC NHẬN & LẤY LINK","success",verify);
+  function renderForm() {
+    form.innerHTML = "";
+    rows = [];
+    gateFields = null;
 
- password.addEventListener("keydown",e=>{
-  if(e.key==="Enter")verify();
- });
+    if (mode === "normal") {
+      makeButton(
+        "+ THÊM LIÊN KẾT",
+        "secondary full",
+        () => addNormalRow(),
+        form
+      );
 
- footer();
+      addNormalRow();
+
+    } else {
+      const video = makeField(
+        "LINK VIDEO HƯỚNG DẪN",
+        "https://...",
+        "url"
+      );
+
+      const ad = makeField(
+        "LINK QUẢNG CÁO",
+        "https://...",
+        "url"
+      );
+
+      const target = makeField(
+        "LINK ĐÍCH",
+        "https://...",
+        "url"
+      );
+
+      const password = makeField(
+        "MẬT KHẨU XÁC THỰC",
+        "Nhập mật khẩu",
+        "password"
+      );
+
+      form.append(
+        video.wrap,
+        ad.wrap,
+        target.wrap,
+        password.wrap
+      );
+
+      gateFields = {
+        video: video.input,
+        ad: ad.input,
+        target: target.input,
+        password: password.input
+      };
+    }
+  }
+
+  function changeMode(value) {
+    mode = value;
+
+    normal.classList.toggle("active", value === "normal");
+    gate.classList.toggle("active", value === "gate");
+
+    status.textContent = "";
+    result.style.display = "none";
+
+    renderForm();
+  }
+
+  normal.onclick = () => changeMode("normal");
+  gate.onclick = () => changeMode("gate");
+
+  renderForm();
+
+  const save = makeButton(
+    "✦ TẠO LINK NGAY",
+    "primary full",
+    async () => {
+      const ownerName = owner.input.value.trim();
+
+      if (!ownerName) {
+        status.textContent = "Vui lòng nhập tên người sở hữu.";
+        status.className = "message error";
+        return;
+      }
+
+      save.disabled = true;
+      status.textContent = "Đang lưu dữ liệu...";
+      status.className = "message";
+
+      try {
+        const data = {
+          owner: ownerName,
+          mode,
+          createdAt: serverTimestamp(),
+          updatedAt: serverTimestamp()
+        };
+
+        if (mode === "normal") {
+          const links = rows.map(x => ({
+            name: x.name.value.trim(),
+            url: x.url.value.trim()
+          }));
+
+          if (
+            !links.length ||
+            links.some(x => !x.name || !validURL(x.url))
+          ) {
+            throw Error("Kiểm tra tên và URL của tất cả liên kết.");
+          }
+
+          data.links = links;
+
+        } else {
+          const f = gateFields;
+
+          const video = f.video.value.trim();
+          const ad = f.ad.value.trim();
+          const target = f.target.value.trim();
+          const password = f.password.value;
+
+          if (
+            !password ||
+            !validURL(video) ||
+            !validURL(ad) ||
+            !validURL(target)
+          ) {
+            throw Error("Vui lòng nhập đầy đủ URL và mật khẩu hợp lệ.");
+          }
+
+          data.video = video;
+          data.ad = ad;
+          data.target = target;
+          data.passwordHash = await hashPassword(password);
+        }
+
+        const ref = await addDoc(
+          collection(db, "links"),
+          data
+        );
+
+        const url =
+          location.origin +
+          location.pathname +
+          "?id=" +
+          ref.id;
+
+        result.innerHTML = "";
+
+        const title = document.createElement("b");
+        title.textContent = "✓ LINK ĐÃ ĐƯỢC TẠO";
+        result.appendChild(title);
+
+        const output = document.createElement("input");
+        output.value = url;
+        output.readOnly = true;
+        result.appendChild(output);
+
+        makeButton(
+          "SAO CHÉP LINK",
+          "copy full",
+          async () => {
+            await navigator.clipboard.writeText(url);
+            alert("Đã sao chép liên kết!");
+          },
+          result
+        );
+
+        result.style.display = "block";
+
+        status.textContent = "Tạo liên kết thành công!";
+        status.className = "message ok";
+
+        result.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest"
+        });
+
+      } catch (error) {
+        status.textContent = errorText(error);
+        status.className = "message error";
+      } finally {
+        save.disabled = false;
+      }
+    },
+    area
+  );
 }
 
-/* =========================
-   KHỞI ĐỘNG
-========================= */
+/* ==================================
+   LỊCH SỬ LINK
+================================== */
 
-try{
+async function renderHistory(area) {
+  area.innerHTML = `
+    <div class="spinner"></div>
+    <p class="message">Đang tải lịch sử...</p>
+  `;
 
- if(!encoded){
+  try {
+    const snapshot = await getDocs(
+      query(
+        collection(db, "links"),
+        orderBy("createdAt", "desc")
+      )
+    );
 
-  renderCreator();
+    area.innerHTML = "";
 
- }else{
+    if (snapshot.empty) {
+      area.appendChild(
+        makeMessage("Chưa có liên kết nào được tạo.")
+      );
+      return;
+    }
 
-  if(encoded.length>1000000)throw Error();
+    snapshot.forEach(snap => {
+      const data = snap.data();
+      const id = snap.id;
 
-  const data=decodeData(encoded);
+      const card = document.createElement("div");
+      card.className = "link-item";
 
-  if(!data||typeof data.owner!=="string"||!data.owner){
-   throw Error();
+      const title = document.createElement("b");
+      title.textContent = data.owner || "Page không tên";
+      card.appendChild(title);
+
+      card.appendChild(
+        makeMessage(
+          (data.mode === "gate" ? "Link vượt" : "Link bình thường") +
+          " · ID: " + id,
+          "small"
+        )
+      );
+
+      const url =
+        location.origin +
+        location.pathname +
+        "?id=" + id;
+
+      const input = document.createElement("input");
+      input.value = url;
+      input.readOnly = true;
+      card.appendChild(input);
+
+      const buttons = document.createElement("div");
+      buttons.className = "row";
+
+      makeButton(
+        "SAO CHÉP",
+        "copy",
+        async () => {
+          try {
+            await navigator.clipboard.writeText(url);
+            alert("Đã sao chép!");
+          } catch {
+            input.select();
+            document.execCommand("copy");
+          }
+        },
+        buttons
+      );
+
+      makeButton(
+        "SỬA",
+        "secondary",
+        () => editLink(id, data, area),
+        buttons
+      );
+
+      makeButton(
+        "XÓA",
+        "danger",
+        async () => {
+          if (!confirm("Bạn có chắc chắn muốn xóa page này?")) return;
+
+          try {
+            await deleteDoc(doc(db, "links", id));
+            renderHistory(area);
+          } catch (error) {
+            alert(errorText(error));
+          }
+        },
+        buttons
+      );
+
+      card.appendChild(buttons);
+      area.appendChild(card);
+    });
+
+  } catch (error) {
+    area.innerHTML = "";
+    area.appendChild(
+      makeMessage(errorText(error), "message error")
+    );
   }
-
-  if(data.mode==="normal"){
-
-   if(!Array.isArray(data.links)||!data.links.length){
-    throw Error();
-   }
-
-   if(data.links.some(x=>
-    !x||
-    typeof x.name!=="string"||
-    !x.name||
-    !validURL(x.url)
-   )){
-    throw Error();
-   }
-
-   renderDirect(data);
-
-  }else if(data.mode==="gate"){
-
-   if(
-    typeof data.p!=="string"||
-    !data.p||
-    !validURL(data.t)||
-    !validURL(data.v)||
-    !validURL(data.a)
-   ){
-    throw Error();
-   }
-
-   showAdvertisement(data);
-
-  }else{
-   throw Error();
-  }
- }
-
-}catch{
-
- app.innerHTML="";
- header();
-
- el("h2","Link không hợp lệ");
- el("p","Dữ liệu bị lỗi hoặc liên kết không hợp lệ.",app,"message error");
-
- btn("QUAY LẠI","primary",()=>location.href=location.pathname);
-
- footer();
 }
+
+/* ==================================
+   SỬA LINK ĐÃ TẠO
+================================== */
+
+function editLink(id, data, area) {
+  currentEditId = id;
+  currentEditData = data;
+
+  area.innerHTML = "";
+
+  const title = document.createElement("h2");
+  title.textContent = "Chỉnh sửa page";
+  area.appendChild(title);
+
+  const owner = makeField(
+    "TÊN NGƯỜI SỞ HỮU",
+    "Tên hiển thị",
+    "text",
+    data.owner || ""
+  );
+
+  area.appendChild(owner.wrap);
+
+  const form = document.createElement("div");
+  area.appendChild(form);
+
+  const status = makeMessage("");
+  area.appendChild(status);
+
+  const normalRows = [];
+  let gateFields = null;
+
+  if (data.mode === "normal") {
+    const addButton = makeButton(
+      "+ THÊM LINK",
+      "secondary full",
+      () => addEditRow(),
+      form
+    );
+
+    function addEditRow(name = "", url = "") {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      const n = makeField(
+        "TÊN LIÊN KẾT",
+        "Tên liên kết",
+        "text",
+        name
+      );
+
+      const u = makeField(
+        "URL",
+        "https://...",
+        "url",
+        url
+      );
+
+      const item = {
+        name: n.input,
+        url: u.input,
+        card
+      };
+
+      makeButton(
+        "✕ XÓA LIÊN KẾT",
+        "danger full",
+        () => {
+          const index = normalRows.indexOf(item);
+          if (index !== -1) normalRows.splice(index, 1);
+          card.remove();
+        },
+        card
+      );
+
+      card.prepend(u.wrap);
+      card.prepend(n.wrap);
+      form.insertBefore(card, addButton);
+      normalRows.push(item);
+    }
+
+    (data.links || []).forEach(x => {
+      addEditRow(x.name, x.url);
+    });
+
+  } else {
+    const video = makeField(
+      "LINK VIDEO HƯỚNG DẪN",
+      "https://...",
+      "url",
+      data.video || ""
+    );
+
+    const ad = makeField(
+      "LINK QUẢNG CÁO",
+      "https://...",
+      "url",
+      data.ad || ""
+    );
+
+    const target = makeField(
+      "LINK ĐÍCH",
+      "https://...",
+      "url",
+      data.target || ""
+    );
+
+    const password = makeField(
+      "ĐỔI MẬT KHẨU",
+      "Để trống nếu giữ mật khẩu cũ",
+      "password"
+    );
+
+    form.append(
+      video.wrap,
+      ad.wrap,
+      target.wrap,
+      password.wrap
+    );
+
+    gateFields = {
+      video: video.input,
+      ad: ad.input,
+      target: target.input,
+      password: password.input
+    };
+  }
+
+  const save = makeButton(
+    "✓ LƯU THAY ĐỔI",
+    "success full",
+    async () => {
+      save.disabled = true;
+
+      try {
+        const updated = {
+          owner: owner.input.value.trim(),
+          updatedAt: serverTimestamp()
+        };
+
+        if (!updated.owner) {
+          throw Error("Tên người sở hữu không được để trống.");
+        }
+
+        if (data.mode === "normal") {
+          const links = normalRows.map(x => ({
+            name: x.name.value.trim(),
+            url: x.url.value.trim()
+          }));
+
+          if (
+            !links.length ||
+            links.some(x => !x.name || !validURL(x.url))
+          ) {
+            throw Error("Hãy kiểm tra các liên kết.");
+          }
+
+          updated.links = links;
+
+        } else {
+          const f = gateFields;
+
+          const video = f.video.value.trim();
+          const ad = f.ad.value.trim();
+          const target = f.target.value.trim();
+
+          if (
+            !validURL(video) ||
+            !validURL(ad) ||
+            !validURL(target)
+          ) {
+            throw Error("URL không hợp lệ.");
+          }
+
+          updated.video = video;
+          updated.ad = ad;
+          updated.target = target;
+
+          if (f.password.value) {
+            updated.passwordHash =
+              await hashPassword(f.password.value);
+          }
+        }
+
+        await updateDoc(
+          doc(db, "links", id),
+          updated
+        );
+
+        alert("Đã cập nhật page thành công!");
+        renderHistory(area);
+
+      } catch (error) {
+        status.textContent = errorText(error);
+        status.className = "message error";
+      } finally {
+        save.disabled = false;
+      }
+    },
+    area
+  );
+
+  makeButton(
+    "QUAY LẠI LỊCH SỬ",
+    "secondary full",
+    () => renderHistory(area),
+    area
+  );
+}
+
+/* ==================================
+   TRANG LINK BÌNH THƯỜNG
+================================== */
+
+function renderDirect(data) {
+  app.innerHTML = "";
+  header();
+
+  const owner = document.createElement("h2");
+  owner.textContent = data.owner || "LINKGATE";
+  app.appendChild(owner);
+
+  app.appendChild(
+    makeMessage(
+      "Chọn liên kết bạn muốn truy cập.",
+      "desc"
+    )
+  );
+
+  const list = document.createElement("div");
+  list.className = "public-links";
+
+  (data.links || []).forEach(item => {
+    if (!item.name || !validURL(item.url)) return;
+
+    const a = document.createElement("a");
+    a.href = item.url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.className = "public-link";
+
+    const name = document.createElement("span");
+    name.textContent = item.name;
+
+    const arrow = document.createElement("span");
+    arrow.textContent = "↗";
+
+    a.append(name, arrow);
+    list.appendChild(a);
+  });
+
+  app.appendChild(list);
+  footer();
+}
+
+/* ==================================
+   QUẢNG CÁO VÀ ĐẾM NGƯỢC
+================================== */
+
+function showAdvertisement(data) {
+  const overlay = $("adOverlay");
+  const visit = $("adVisit");
+  const count = $("adCount");
+  const next = $("continueBtn");
+  const bar = $("progressBar");
+
+  visit.href = data.ad;
+  overlay.classList.add("show");
+
+  let remaining = WAIT_SECONDS;
+
+  next.classList.remove("show");
+  next.disabled = true;
+  bar.style.width = "0%";
+
+  count.textContent =
+    "Vui lòng chờ " + remaining + " giây...";
+
+  const timer = setInterval(() => {
+    remaining--;
+
+    count.textContent = remaining > 0
+      ? "Vui lòng chờ " + remaining + " giây..."
+      : "Đã hoàn tất thời gian chờ.";
+
+    bar.style.width =
+      ((WAIT_SECONDS - remaining) / WAIT_SECONDS * 100) + "%";
+
+    if (remaining <= 0) {
+      clearInterval(timer);
+      next.classList.add("show");
+      next.disabled = false;
+    }
+  }, 1000);
+
+  next.onclick = () => {
+    clearInterval(timer);
+    overlay.classList.remove("show");
+    renderGate(data);
+  };
+}
+
+/* ==================================
+   TRANG LINK VƯỢT
+================================== */
+
+function renderGate(data) {
+  app.innerHTML = "";
+  header();
+
+  app.appendChild(
+    makeMessage(
+      "XÁC THỰC LIÊN KẾT",
+      "desc"
+    )
+  );
+
+  const box = document.createElement("div");
+  box.className = "card";
+
+  const video = document.createElement("a");
+  video.href = data.video;
+  video.target = "_blank";
+  video.rel = "noopener noreferrer";
+  video.className = "ad-button";
+  video.textContent = "▶ XEM VIDEO HƯỚNG DẪN";
+
+  box.appendChild(video);
+
+  const note = document.createElement("div");
+  note.className = "note";
+  note.textContent =
+    "Nhập mật khẩu chính xác để tiếp tục đến liên kết đích.";
+
+  box.appendChild(note);
+
+  const pass = makeField(
+    "MẬT KHẨU XÁC THỰC",
+    "Nhập mật khẩu...",
+    "password"
+  );
+
+  box.appendChild(pass.wrap);
+
+  const status = makeMessage("");
+  box.appendChild(status);
+
+  const verify = makeButton(
+    "✓ XÁC NHẬN & LẤY LINK",
+    "success full",
+    async () => {
+      verify.disabled = true;
+
+      try {
+        const hash = await hashPassword(pass.input.value);
+
+        if (hash !== data.passwordHash) {
+          status.textContent = "Mật khẩu không chính xác!";
+          status.className = "message error";
+          pass.input.value = "";
+          return;
+        }
+
+        status.textContent =
+          "Xác thực thành công! Đang chuẩn bị liên kết...";
+
+        status.className = "message ok";
+
+        const loading = document.createElement("div");
+        loading.className = "spinner";
+        box.appendChild(loading);
+
+        const a = document.createElement("a");
+        a.href = data.target;
+        a.className = "ad-button";
+        a.textContent = "NHẤN VÀO ĐÂY NẾU KHÔNG TỰ CHUYỂN";
+        box.appendChild(a);
+
+        setTimeout(() => {
+          location.assign(data.target);
+        }, 1800);
+
+      } catch {
+        status.textContent = "Không thể xác thực.";
+        status.className = "message error";
+      } finally {
+        verify.disabled = false;
+      }
+    },
+    box
+  );
+
+  pass.input.addEventListener("keydown", e => {
+    if (e.key === "Enter") verify.click();
+  });
+
+  app.appendChild(box);
+  footer();
+}
+
+/* ==================================
+   MỞ LINK CÔNG KHAI
+================================== */
+
+async function publicPage(id) {
+  showLoading("Đang tải liên kết...");
+
+  try {
+    const snap = await getDoc(doc(db, "links", id));
+
+    if (!snap.exists()) {
+      throw Error("Liên kết không tồn tại hoặc đã bị xóa.");
+    }
+
+    const data = snap.data();
+
+    if (data.mode === "normal") {
+      if (!Array.isArray(data.links)) {
+        throw Error("Dữ liệu liên kết không hợp lệ.");
+      }
+
+      renderDirect(data);
+      return;
+    }
+
+    if (
+      data.mode !== "gate" ||
+      !data.passwordHash ||
+      !validURL(data.target) ||
+      !validURL(data.video) ||
+      !validURL(data.ad)
+    ) {
+      throw Error("Dữ liệu link vượt không hợp lệ.");
+    }
+
+    showAdvertisement(data);
+
+  } catch (error) {
+    showError(error.message || errorText(error));
+  }
+}
+
+/* ==================================
+   KHỞI ĐỘNG AN TOÀN
+================================== */
+
+async function start() {
+  try {
+    const firebaseApp = initializeApp(firebaseConfig);
+    db = getFirestore(firebaseApp);
+
+    if (linkId) {
+      await publicPage(linkId);
+    } else {
+      renderHome();
+    }
+
+  } catch (error) {
+    console.error(error);
+
+    showError(
+      "Không thể khởi động Firebase: " + errorText(error)
+    );
+  }
+}
+
+start();
 </script>
-
 </body>
 </html>

@@ -1,401 +1,420 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080d1b">
-<title>LinkGate Ultra</title>
+<title>Huỳnh Phước Trọng - Trọng Mods Games</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-:root{
---bg:#080d1b;
---panel:#111a2e;
---border:#293a58;
---text:#f8fafc;
---muted:#91a1ba;
---blue:#5687ff;
---green:#19cb91;
---red:#ff607d;
+:root {
+  --bg:#080d1b;
+  --panel:#111a2e;
+  --border:#293a58;
+  --text:#f8fafc;
+  --muted:#91a1ba;
+  --blue:#5687ff;
+  --green:#19cb91;
+  --red:#ff607d;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-min-height:100vh;
-padding:20px;
-display:flex;
-justify-content:center;
-align-items:center;
-font-family:Inter,Arial,sans-serif;
-color:var(--text);
-background:
-radial-gradient(ellipse at 15% 5%,#1c3158,transparent 45%),
-radial-gradient(ellipse at 90% 90%,#251747,transparent 40%),
-var(--bg);
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-.container{
-width:100%;
-max-width:650px;
-padding:28px;
-border:1px solid #26354c;
-border-radius:24px;
-background:rgba(17,26,46,.97);
-box-shadow:0 25px 80px #0008;
-animation:appear .65s ease both;
+body {
+  min-height:100vh;
+  padding:18px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Inter,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(ellipse at 15% 5%,#1c3158,transparent 45%),
+    radial-gradient(ellipse at 90% 90%,#251747,transparent 40%),
+    var(--bg);
 }
 
-@keyframes appear{
-from{opacity:0;transform:translateY(25px) scale(.98)}
-to{opacity:1;transform:translateY(0) scale(1)}
+.container {
+  width:100%;
+  max-width:680px;
+  padding:28px;
+  border:1px solid #30466c;
+  border-radius:24px;
+  background:rgba(17,26,46,.97);
+  box-shadow:0 25px 80px #0008;
+  animation:appear .5s ease both;
 }
 
-@keyframes fade{
-from{opacity:0;transform:translateY(15px)}
-to{opacity:1;transform:translateY(0)}
+@keyframes appear {
+  from {opacity:0;transform:translateY(20px)}
+  to {opacity:1;transform:translateY(0)}
 }
 
-@keyframes spin{to{transform:rotate(360deg)}}
-
-.logo{
-text-align:center;
-font-size:38px;
-font-weight:900;
-letter-spacing:-2px;
-background:linear-gradient(110deg,#72b5ff,#7585ff,#bb79ff);
-color:transparent;
-background-clip:text;
+@keyframes fade {
+  from {opacity:0;transform:translateY(12px)}
+  to {opacity:1;transform:translateY(0)}
 }
 
-.subtitle{
-text-align:center;
-color:#8193b3;
-font-size:10px;
-font-weight:800;
-letter-spacing:4px;
-margin:8px 0 27px;
+@keyframes spin {
+  to {transform:rotate(360deg)}
 }
 
-h2{
-text-align:center;
-font-size:22px;
-margin:10px 0;
+.logo {
+  text-align:center;
+  font-size:clamp(25px,7vw,37px);
+  font-weight:900;
+  letter-spacing:-1.5px;
+  background:linear-gradient(110deg,#72b5ff,#7585ff,#bb79ff);
+  color:transparent;
+  background-clip:text;
 }
 
-.desc{
-text-align:center;
-color:var(--muted);
-font-size:12px;
-line-height:1.8;
-margin-bottom:20px;
+.subtitle {
+  text-align:center;
+  color:#91a9d4;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:3px;
+  margin:9px 0 27px;
 }
 
-.label{
-display:block;
-color:#c5d2e7;
-font-size:11px;
-font-weight:800;
-margin:15px 0 7px;
+h2 {
+  text-align:center;
+  font-size:22px;
+  margin:12px 0;
 }
 
-input,textarea,select{
-width:100%;
-padding:13px;
-background:#0a1325;
-color:white;
-border:1px solid var(--border);
-border-radius:10px;
-font-size:13px;
-outline:none;
-margin-top:5px;
-font-family:inherit;
+.desc {
+  text-align:center;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+  margin-bottom:20px;
 }
 
-input{height:47px}
-textarea{min-height:120px;resize:vertical;line-height:1.7}
-input:focus,textarea:focus,select:focus{border-color:var(--blue)}
-
-button{
-min-height:43px;
-padding:11px 15px;
-border:0;
-border-radius:10px;
-color:white;
-font-size:12px;
-font-weight:800;
-cursor:pointer;
-transition:.2s;
+.label {
+  display:block;
+  color:#c5d2e7;
+  font-size:11px;
+  font-weight:800;
+  margin:15px 0 7px;
 }
 
-button:hover:not(:disabled){
-filter:brightness(1.15);
-transform:translateY(-2px);
+input,textarea,select {
+  width:100%;
+  padding:13px;
+  background:#0a1325;
+  color:white;
+  border:1px solid var(--border);
+  border-radius:12px;
+  font-size:13px;
+  outline:none;
+  margin-top:5px;
+  font-family:inherit;
+  transition:.2s;
 }
 
-button:disabled{opacity:.5;cursor:not-allowed}
+input {height:47px}
+textarea {min-height:120px;resize:vertical;line-height:1.7}
 
-.primary{background:linear-gradient(110deg,#377df4,#7459f0)}
-.success{background:linear-gradient(110deg,#0bbd88,#12a77a)}
-.danger{background:#a8324b}
-.secondary{background:#293a58}
-.copy{background:#087da9}
-.full{width:100%;margin-top:12px}
-
-.tabs{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:9px;
-margin:20px 0;
+input:focus,textarea:focus,select:focus {
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px #5687ff22;
 }
 
-.tab{
-background:#0a1325;
-color:#91a1ba;
-border:1px solid var(--border);
+button {
+  min-height:45px;
+  padding:12px 16px;
+  border:0;
+  border-radius:12px;
+  color:white;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+  transition:.2s;
 }
 
-.tab.active{
-background:#1c3158;
-color:#91b6ff;
-border-color:#5687ff;
+button:hover:not(:disabled) {
+  filter:brightness(1.15);
+  transform:translateY(-2px);
+  box-shadow:0 7px 20px #0005;
 }
 
-.mode-box{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-margin:18px 0;
+button:active:not(:disabled) {transform:scale(.97)}
+button:disabled {opacity:.5;cursor:not-allowed}
+
+.primary {background:linear-gradient(110deg,#377df4,#7459f0)}
+.success {background:linear-gradient(110deg,#0bbd88,#12a77a)}
+.danger {background:linear-gradient(110deg,#d94361,#a8324b)}
+.secondary {background:linear-gradient(110deg,#293a58,#354c70)}
+.copy {background:linear-gradient(110deg,#087da9,#2867d9)}
+.full {width:100%;margin-top:12px}
+
+.tabs {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:20px 0;
 }
 
-.mode-option{
-padding:17px 8px;
-background:#0a1325;
-border:1px solid var(--border);
-border-radius:12px;
-cursor:pointer;
-text-align:center;
-font-size:12px;
-font-weight:800;
+.tab {
+  background:#0a1325;
+  color:#91a1ba;
+  border:1px solid var(--border);
 }
 
-.mode-option.active{
-border-color:#5687ff;
-background:#17294b;
-color:#91b6ff;
+.tab.active {
+  background:linear-gradient(110deg,#1c3158,#30265d);
+  color:#a9c9ff;
+  border-color:#5687ff;
 }
 
-.mode-option small{
-display:block;
-color:#91a1ba;
-margin-top:7px;
-font-size:10px;
-font-weight:500;
+.mode-box {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:18px 0;
 }
 
-.card,.link-item{
-background:#0a1427;
-border:1px solid var(--border);
-border-radius:12px;
-padding:15px;
-margin:12px 0;
-animation:fade .35s ease both;
+.mode-option {
+  padding:18px 10px;
+  background:#0a1325;
+  border:1px solid var(--border);
+  border-radius:13px;
+  cursor:pointer;
+  text-align:center;
+  font-size:12px;
+  font-weight:800;
+  transition:.2s;
 }
 
-.row{
-display:flex;
-gap:8px;
-align-items:center;
-flex-wrap:wrap;
+.mode-option.active {
+  border-color:#5687ff;
+  background:linear-gradient(120deg,#17294b,#30265d);
+  color:#91b6ff;
 }
 
-.row>*{flex:1;min-width:0}
-
-.message{
-text-align:center;
-font-size:12px;
-margin-top:12px;
-line-height:1.7;
-color:var(--muted);
-overflow-wrap:anywhere;
+.mode-option small {
+  display:block;
+  color:#91a1ba;
+  margin-top:7px;
+  font-size:10px;
+  font-weight:500;
 }
 
-.error{color:#ff7088}
-.ok{color:#36e4ae}
-
-.note{
-padding:14px;
-margin:15px 0;
-background:#1a2a45;
-border-left:3px solid var(--blue);
-border-radius:8px;
-font-size:12px;
-line-height:1.7;
-color:#c5d5f1;
+.card,.link-item {
+  background:#0a1427;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  margin:12px 0;
+  animation:fade .35s ease both;
 }
 
-.small{
-font-size:11px;
-color:var(--muted);
-overflow-wrap:anywhere;
-margin:7px 0;
+.row {
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap;
 }
 
-.result{
-display:none;
-background:#0a1427;
-border:1px solid var(--border);
-border-radius:12px;
-padding:15px;
-margin-top:17px;
-animation:fade .4s;
+.row>* {flex:1;min-width:0}
+
+.message {
+  text-align:center;
+  font-size:12px;
+  margin-top:12px;
+  line-height:1.8;
+  color:var(--muted);
+  overflow-wrap:anywhere;
 }
 
-.result b{color:#91b6ff;font-size:12px}
-.link-item b{font-size:13px}
+.error {color:#ff7088}
+.ok {color:#36e4ae}
 
-.public-links{
-display:flex;
-flex-direction:column;
-gap:12px;
-margin-top:22px;
+.note {
+  padding:15px;
+  margin:15px 0;
+  background:#1a2a45;
+  border-left:3px solid var(--blue);
+  border-radius:9px;
+  font-size:12px;
+  line-height:1.8;
+  color:#c5d5f1;
 }
 
-.public-link{
-display:flex;
-justify-content:space-between;
-gap:10px;
-padding:17px;
-border:1px solid #34496c;
-border-radius:13px;
-background:linear-gradient(110deg,#172944,#101b32);
-text-decoration:none;
-color:white;
-font-size:13px;
-font-weight:800;
-transition:.2s;
+.small {
+  font-size:11px;
+  color:var(--muted);
+  overflow-wrap:anywhere;
+  margin:7px 0;
 }
 
-.public-link:hover{
-border-color:#5687ff;
-transform:translateY(-2px);
+.result {
+  display:none;
+  background:#0a1427;
+  border:1px solid var(--border);
+  border-radius:13px;
+  padding:16px;
+  margin-top:17px;
+  animation:fade .4s;
 }
 
-.public-link span:last-child{color:#83aaff}
+.result b {color:#91b6ff;font-size:12px}
+.link-item b {font-size:13px}
 
-.text-public{
-padding:17px;
-border:1px solid #34496c;
-border-radius:13px;
-background:linear-gradient(110deg,#172944,#101b32);
-margin-bottom:12px;
+.public-links {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:22px;
 }
 
-.text-public h3{
-font-size:13px;
-margin-bottom:10px;
+.public-link {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:18px;
+  border:1px solid #34496c;
+  border-radius:14px;
+  background:linear-gradient(110deg,#172944,#101b32);
+  text-decoration:none;
+  color:white;
+  font-size:13px;
+  font-weight:800;
+  transition:.2s;
 }
 
-.text-content{
-white-space:pre-wrap;
-overflow-wrap:anywhere;
-font-size:13px;
-line-height:1.8;
-color:#cbd8ed;
-padding:12px;
-background:#080f20;
-border-radius:9px;
-margin:10px 0;
+.public-link:hover {
+  border-color:#5687ff;
+  transform:translateY(-3px);
 }
 
-.footer{
-margin-top:25px;
-padding-top:15px;
-border-top:1px solid var(--border);
-text-align:center;
-color:#62738f;
-font-size:10px;
+.public-link span:last-child {
+  color:#83aaff;
+  font-size:18px;
 }
 
-.spinner{
-width:35px;
-height:35px;
-border:3px solid #293a58;
-border-top-color:#72b5ff;
-border-radius:50%;
-animation:spin .8s linear infinite;
-margin:0 auto 14px;
+.text-public {
+  padding:17px;
+  border:1px solid #34496c;
+  border-radius:13px;
+  background:linear-gradient(110deg,#172944,#101b32);
+  margin-bottom:12px;
 }
 
-.overlay{
-display:none;
-position:fixed;
-inset:0;
-z-index:9999;
-align-items:center;
-justify-content:center;
-padding:20px;
-background:#050914f5;
-backdrop-filter:blur(12px);
+.text-public h3 {font-size:13px;margin-bottom:10px}
+
+.text-content {
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  font-size:13px;
+  line-height:1.8;
+  color:#cbd8ed;
+  padding:13px;
+  background:#080f20;
+  border-radius:9px;
+  margin:10px 0;
 }
 
-.overlay.show{
-display:flex;
-animation:fade .4s;
+.footer {
+  margin-top:25px;
+  padding-top:16px;
+  border-top:1px solid var(--border);
+  text-align:center;
+  color:#8294b3;
+  font-size:10px;
+  line-height:1.9;
 }
 
-.ad-card{
-width:100%;
-max-width:400px;
-padding:25px;
-border:1px solid #40516f;
-border-radius:18px;
-background:#111a2e;
-text-align:center;
-animation:appear .5s;
+.spinner {
+  width:35px;
+  height:35px;
+  border:3px solid #293a58;
+  border-top-color:#72b5ff;
+  border-radius:50%;
+  animation:spin .8s linear infinite;
+  margin:0 auto 14px;
 }
 
-.ad-button{
-display:block;
-padding:15px;
-margin-top:15px;
-background:linear-gradient(110deg,#377df4,#7459f0);
-border-radius:10px;
-color:white;
-text-decoration:none;
-font-size:13px;
-font-weight:800;
+.overlay {
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:#050914f5;
+  backdrop-filter:blur(12px);
 }
 
-.progress{
-height:5px;
-background:#293a58;
-border-radius:20px;
-overflow:hidden;
-margin:15px 0;
+.overlay.show {
+  display:flex;
+  animation:fade .4s;
 }
 
-.progress div{
-height:100%;
-width:0;
-background:linear-gradient(90deg,#5687ff,#19cb91);
-transition:width .3s;
+.ad-card {
+  width:100%;
+  max-width:400px;
+  padding:25px;
+  border:1px solid #40516f;
+  border-radius:18px;
+  background:#111a2e;
+  text-align:center;
+  animation:appear .5s;
 }
 
-.continue{
-display:none;
-background:#16a77c;
-width:100%;
-margin-top:12px;
+.ad-button {
+  display:block;
+  padding:15px;
+  margin-top:15px;
+  background:linear-gradient(110deg,#377df4,#7459f0);
+  border-radius:12px;
+  color:white;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:800;
 }
 
-.continue.show{display:block}
+.progress {
+  height:5px;
+  background:#293a58;
+  border-radius:20px;
+  overflow:hidden;
+  margin:15px 0;
+}
 
-@media(max-width:480px){
-.container{padding:22px 17px}
-.logo{font-size:32px}
-.mode-box{grid-template-columns:1fr}
+.progress div {
+  height:100%;
+  width:0;
+  background:linear-gradient(90deg,#5687ff,#19cb91);
+  transition:width .3s;
+}
+
+.continue {
+  display:none;
+  background:linear-gradient(110deg,#16b98a,#078c78);
+  width:100%;
+  margin-top:12px;
+}
+
+.continue.show {display:block}
+
+@media(max-width:480px) {
+  body {padding:12px}
+  .container {padding:22px 16px}
+  .mode-box {grid-template-columns:1fr}
+  .row {flex-direction:column}
+  .row>* {width:100%}
 }
 </style>
 </head>
@@ -403,29 +422,29 @@ margin-top:12px;
 <body>
 
 <main class="container" id="app">
-<div style="text-align:center;padding:35px">
-<div class="spinner"></div>
-Đang kết nối LinkGate...
-</div>
+  <div style="text-align:center;padding:35px">
+    <div class="spinner"></div>
+    Đang kết nối hệ thống...
+  </div>
 </main>
 
 <div class="overlay" id="adOverlay">
-<div class="ad-card">
-<div class="subtitle">LINKGATE ULTRA</div>
-<h2>Quảng cáo tài trợ</h2>
-<p class="desc">Mở liên kết quảng cáo và chờ hoàn tất thời gian xác thực.</p>
+  <div class="ad-card">
+    <div class="subtitle">TRỌNG MODS GAMES</div>
+    <h2>Quảng cáo tài trợ</h2>
+    <p class="desc">Mở liên kết quảng cáo và chờ hoàn tất thời gian xác thực.</p>
 
-<a class="ad-button" id="adVisit" target="_blank" rel="sponsored noopener noreferrer">
-↗ XEM QUẢNG CÁO
-</a>
+    <a class="ad-button" id="adVisit" target="_blank" rel="sponsored noopener noreferrer">
+      ↗ XEM QUẢNG CÁO
+    </a>
 
-<div class="progress"><div id="progressBar"></div></div>
-<div class="message" id="adCount"></div>
+    <div class="progress"><div id="progressBar"></div></div>
+    <div class="message" id="adCount"></div>
 
-<button class="continue" id="continueBtn">
-TIẾP TỤC XÁC THỰC
-</button>
-</div>
+    <button class="continue" id="continueBtn">
+      TIẾP TỤC XÁC THỰC
+    </button>
+  </div>
 </div>
 
 <script type="module">
@@ -446,7 +465,7 @@ serverTimestamp
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-/* FIREBASE */
+/* GIỮ NGUYÊN FIREBASE CŨ */
 
 const firebaseConfig={
 apiKey:"AIzaSyDDCFAzI1OlCGKYQJVgy21X_pLlUqvjrU",
@@ -466,7 +485,6 @@ const params=new URLSearchParams(location.search);
 const linkId=params.get("id");
 
 const WAIT_SECONDS=8;
-
 const $=id=>document.getElementById(id);
 
 function validURL(value){
@@ -485,7 +503,6 @@ return p;
 
 function field(label,placeholder,type="text",value=""){
 const wrap=document.createElement("div");
-
 const l=document.createElement("label");
 l.className="label";
 l.textContent=label;
@@ -501,7 +518,6 @@ return {wrap,input};
 
 function textField(label,placeholder,value=""){
 const wrap=document.createElement("div");
-
 const l=document.createElement("label");
 l.className="label";
 l.textContent=label;
@@ -543,15 +559,21 @@ return ok;
 
 function header(){
 app.innerHTML=`
-<div class="logo">LINKGATE</div>
-<div class="subtitle">SMART LINK GATEWAY</div>
+<div class="logo">HUỲNH PHƯỚC TRỌNG</div>
+<div class="subtitle">✦ TRỌNG MODS GAMES ✦</div>
 `;
 }
 
 function footer(){
 const f=document.createElement("div");
 f.className="footer";
-f.textContent="LINKGATE ULTRA • POWERED BY FIREBASE";
+f.innerHTML=`
+<div style="font-size:13px;font-weight:900;color:#91baff;margin-bottom:6px">
+TRỌNG MODS GAMES
+</div>
+<div>© 2026 HUỲNH PHƯỚC TRỌNG</div>
+<div>Designed with passion ✦</div>
+`;
 app.appendChild(f);
 }
 
@@ -559,8 +581,9 @@ function loading(text){
 app.innerHTML=`
 <div style="text-align:center;padding:40px">
 <div class="spinner"></div>
-<p class="message">${text}</p>
+<p class="message"></p>
 </div>`;
+app.querySelector(".message").textContent=text;
 }
 
 function errorText(e){
@@ -586,15 +609,14 @@ return Array.from(new Uint8Array(bytes))
 /* TRANG CHỦ */
 
 function renderHome(){
-
 header();
 
 const h=document.createElement("h2");
-h.textContent="Bảng điều khiển";
+h.textContent="Chào mừng bạn!";
 app.appendChild(h);
 
 app.appendChild(message(
-"Tạo và quản lý các liên kết của bạn.",
+"Quản lý và tạo các liên kết tiện ích của bạn tại đây.",
 "desc"
 ));
 
@@ -603,7 +625,7 @@ tabs.className="tabs";
 
 const create=document.createElement("button");
 create.className="tab active";
-create.textContent="✦ TẠO LINK";
+create.textContent="✦ TẠO LIÊN KẾT";
 
 const history=document.createElement("button");
 history.className="tab";
@@ -618,7 +640,6 @@ app.appendChild(area);
 function switchTab(mode){
 create.classList.toggle("active",mode==="create");
 history.classList.toggle("active",mode==="history");
-
 if(mode==="create")renderCreator(area);
 else renderHistory(area);
 }
@@ -630,10 +651,9 @@ renderCreator(area);
 footer();
 }
 
-/* TẠO LINK */
+/* TẠO LIÊN KẾT */
 
 function renderCreator(area){
-
 area.innerHTML="";
 
 const modeBox=document.createElement("div");
@@ -641,16 +661,16 @@ modeBox.className="mode-box";
 
 const normal=document.createElement("div");
 normal.className="mode-option active";
-normal.innerHTML=`LINK BÌNH THƯỜNG<small>Chuyển hướng hoặc sao chép văn bản</small>`;
+normal.innerHTML=`LIÊN KẾT THƯỜNG<small>Chuyển hướng hoặc sao chép văn bản</small>`;
 
 const gate=document.createElement("div");
 gate.className="mode-option";
-gate.innerHTML=`LINK VƯỢT<small>Quảng cáo và mật khẩu</small>`;
+gate.innerHTML=`XÁC THỰC MẬT KHẨU<small>Quảng cáo và mật khẩu</small>`;
 
 modeBox.append(normal,gate);
 area.appendChild(modeBox);
 
-const owner=field("TÊN TRANG","Tên trang của bạn");
+const owner=field("TÊN TRANG","Nhập tên trang của bạn");
 area.appendChild(owner.wrap);
 
 const form=document.createElement("div");
@@ -668,11 +688,10 @@ let rows=[];
 let gateFields=null;
 
 function addRow(name="",type="redirect",url="",content=""){
-
 const card=document.createElement("div");
 card.className="card";
 
-const n=field("TÊN HIỂN THỊ","Nhập tên liên kết", "text",name);
+const n=field("TÊN HIỂN THỊ","Nhập tên liên kết","text",name);
 
 const typeWrap=document.createElement("div");
 const label=document.createElement("label");
@@ -695,11 +714,7 @@ select.value=type;
 typeWrap.append(label,select);
 
 const urlField=field("URL ĐÍCH","https://...","url",url);
-const contentField=textField(
-"VĂN BẢN CẦN SAO CHÉP",
-"Dán nội dung văn bản vào đây...",
-content
-);
+const contentField=textField("VĂN BẢN CẦN SAO CHÉP","Dán nội dung văn bản...",content);
 
 const remove=document.createElement("button");
 remove.className="danger full";
@@ -726,70 +741,44 @@ rows=rows.filter(x=>x!==item);
 card.remove();
 };
 
-card.append(
-n.wrap,
-typeWrap,
-urlField.wrap,
-contentField.wrap,
-remove
-);
-
+card.append(n.wrap,typeWrap,urlField.wrap,contentField.wrap,remove);
 form.appendChild(card);
 rows.push(item);
 }
 
 function renderForm(){
-
 form.innerHTML="";
 rows=[];
 gateFields=null;
 
 if(mode==="normal"){
-
 button("+ THÊM LIÊN KẾT","secondary full",()=>addRow(),form);
-
 addRow();
-
 }else{
-
 const video=field("LINK VIDEO HƯỚNG DẪN","https://...","url");
 const ad=field("LINK QUẢNG CÁO","https://...","url");
 const target=field("LINK ĐÍCH","https://...","url");
 const password=field("MẬT KHẨU XÁC THỰC","Nhập mật khẩu","password");
 
 form.append(video.wrap,ad.wrap,target.wrap,password.wrap);
-
-gateFields={
-video:video.input,
-ad:ad.input,
-target:target.input,
-password:password.input
-};
+gateFields={video:video.input,ad:ad.input,target:target.input,password:password.input};
 }
 }
 
 function changeMode(value){
 mode=value;
-
 normal.classList.toggle("active",value==="normal");
 gate.classList.toggle("active",value==="gate");
-
 status.textContent="";
 result.style.display="none";
-
 renderForm();
 }
 
 normal.onclick=()=>changeMode("normal");
 gate.onclick=()=>changeMode("gate");
-
 renderForm();
 
-const save=button(
-"✦ TẠO LINK NGAY",
-"primary full",
-async()=>{
-
+const save=button("✦ TẠO LIÊN KẾT NGAY","primary full",async()=>{
 const ownerName=owner.input.value.trim();
 
 if(!ownerName){
@@ -803,7 +792,6 @@ status.textContent="Đang lưu dữ liệu...";
 status.className="message";
 
 try{
-
 const data={
 owner:ownerName,
 mode,
@@ -812,7 +800,6 @@ updatedAt:serverTimestamp()
 };
 
 if(mode==="normal"){
-
 const links=rows.map(x=>({
 name:x.name.value.trim(),
 type:x.type.value,
@@ -824,22 +811,13 @@ if(!links.length)throw Error("Hãy thêm ít nhất một liên kết.");
 
 for(const x of links){
 if(!x.name)throw Error("Tên liên kết không được để trống.");
-
-if(x.type==="redirect"&&!validURL(x.url)){
-throw Error("URL chuyển hướng không hợp lệ.");
-}
-
-if(x.type==="text"&&!x.content.trim()){
-throw Error("Vui lòng nhập văn bản cần sao chép.");
-}
+if(x.type==="redirect"&&!validURL(x.url))throw Error("URL chuyển hướng không hợp lệ.");
+if(x.type==="text"&&!x.content.trim())throw Error("Vui lòng nhập văn bản cần sao chép.");
 }
 
 data.links=links;
-
 }else{
-
 const f=gateFields;
-
 const video=f.video.value.trim();
 const ad=f.ad.value.trim();
 const target=f.target.value.trim();
@@ -856,30 +834,25 @@ data.passwordHash=await hashPassword(password);
 }
 
 const ref=await addDoc(collection(db,"links"),data);
-
 const url=location.origin+location.pathname+"?id="+ref.id;
 
 result.innerHTML="";
-
 const title=document.createElement("b");
-title.textContent="✓ LINK ĐÃ ĐƯỢC TẠO";
+title.textContent="✓ ĐÃ TẠO LIÊN KẾT THÀNH CÔNG";
 
 const output=document.createElement("input");
 output.value=url;
 output.readOnly=true;
-
 result.append(title,output);
 
-button("SAO CHÉP LINK","copy full",async()=>{
+button("📋 SAO CHÉP LIÊN KẾT","copy full",async()=>{
 const ok=await copyText(url);
-alert(ok?"Đã sao chép link!":"Không thể sao chép.");
+alert(ok?"Đã sao chép liên kết!":"Không thể sao chép.");
 },result);
 
 result.style.display="block";
-
 status.textContent="Tạo liên kết thành công!";
 status.className="message ok";
-
 result.scrollIntoView({behavior:"smooth",block:"nearest"});
 
 }catch(e){
@@ -888,27 +861,19 @@ status.className="message error";
 }finally{
 save.disabled=false;
 }
-},
-area
-);
+},area);
 }
 
 /* LỊCH SỬ */
 
 async function renderHistory(area){
-
-area.innerHTML=`
-<div class="spinner"></div>
-<p class="message">Đang tải lịch sử...</p>
-`;
+area.innerHTML=`<div class="spinner"></div><p class="message">Đang tải lịch sử...</p>`;
 
 try{
-
 const snapshot=await getDocs(collection(db,"links"));
 
 const docs=snapshot.docs.sort((a,b)=>
-(b.data().createdAt?.seconds||0)-
-(a.data().createdAt?.seconds||0)
+(b.data().createdAt?.seconds||0)-(a.data().createdAt?.seconds||0)
 );
 
 area.innerHTML="";
@@ -919,7 +884,6 @@ return;
 }
 
 docs.forEach(snap=>{
-
 const data=snap.data();
 const id=snap.id;
 
@@ -931,12 +895,11 @@ title.textContent=data.owner||"Trang không tên";
 card.appendChild(title);
 
 card.appendChild(message(
-(data.mode==="gate"?"Link vượt":"Link bình thường")+" · ID: "+id,
+(data.mode==="gate"?"Xác thực mật khẩu":"Liên kết thường")+" · ID: "+id,
 "small"
 ));
 
 const url=location.origin+location.pathname+"?id="+id;
-
 const input=document.createElement("input");
 input.value=url;
 input.readOnly=true;
@@ -950,44 +913,37 @@ const ok=await copyText(url);
 if(ok)alert("Đã sao chép!");
 },row);
 
-button("SỬA","secondary",()=>{
+button("CHỈNH SỬA","secondary",()=>{
 editLink(id,data,area);
 },row);
 
 button("XÓA","danger",async()=>{
-
 if(!confirm("Bạn có chắc chắn muốn xóa trang này?"))return;
-
 try{
 await deleteDoc(doc(db,"links",id));
 renderHistory(area);
 }catch(e){
 alert(errorText(e));
 }
-
 },row);
 
 card.appendChild(row);
 area.appendChild(card);
-
 });
 
 }catch(e){
-
 area.innerHTML="";
 area.appendChild(message(errorText(e),"message error"));
-
 }
 }
 
-/* SỬA LINK */
+/* CHỈNH SỬA */
 
 function editLink(id,data,area){
-
 area.innerHTML="";
 
 const h=document.createElement("h2");
-h.textContent="Chỉnh sửa trang";
+h.textContent="Chỉnh sửa liên kết";
 area.appendChild(h);
 
 const owner=field("TÊN TRANG","Tên trang","text",data.owner||"");
@@ -1003,16 +959,13 @@ const normalRows=[];
 let gateFields=null;
 
 if(data.mode==="normal"){
-
-const add=button("+ THÊM LINK","secondary full",()=>addEditRow(),form);
+const add=button("+ THÊM LIÊN KẾT","secondary full",()=>addEditRow(),form);
 
 function addEditRow(name="",type="redirect",url="",content=""){
-
 const card=document.createElement("div");
 card.className="card";
 
 const n=field("TÊN HIỂN THỊ","Tên liên kết","text",name);
-
 const typeWrap=document.createElement("div");
 const label=document.createElement("label");
 label.className="label";
@@ -1044,12 +997,7 @@ t.wrap.style.display=select.value==="text"?"block":"none";
 select.onchange=visibility;
 visibility();
 
-const item={
-name:n.input,
-type:select,
-url:u.input,
-content:t.input
-};
+const item={name:n.input,type:select,url:u.input,content:t.input};
 
 button("✕ XÓA LIÊN KẾT","danger full",()=>{
 const index=normalRows.indexOf(item);
@@ -1058,43 +1006,28 @@ card.remove();
 },card);
 
 card.append(n.wrap,typeWrap,u.wrap,t.wrap);
-
 form.insertBefore(card,add);
 normalRows.push(item);
 }
 
 (data.links||[]).forEach(x=>{
-addEditRow(
-x.name||"",
-x.type||"redirect",
-x.url||"",
-x.content||""
-);
+addEditRow(x.name||"",x.type||"redirect",x.url||"",x.content||"");
 });
 
 }else{
-
 const video=field("LINK VIDEO HƯỚNG DẪN","https://...","url",data.video||"");
 const ad=field("LINK QUẢNG CÁO","https://...","url",data.ad||"");
 const target=field("LINK ĐÍCH","https://...","url",data.target||"");
 const password=field("ĐỔI MẬT KHẨU","Để trống nếu giữ mật khẩu cũ","password");
 
 form.append(video.wrap,ad.wrap,target.wrap,password.wrap);
-
-gateFields={
-video:video.input,
-ad:ad.input,
-target:target.input,
-password:password.input
-};
+gateFields={video:video.input,ad:ad.input,target:target.input,password:password.input};
 }
 
 const save=button("✓ LƯU THAY ĐỔI","success full",async()=>{
-
 save.disabled=true;
 
 try{
-
 const updated={
 owner:owner.input.value.trim(),
 updatedAt:serverTimestamp()
@@ -1103,7 +1036,6 @@ updatedAt:serverTimestamp()
 if(!updated.owner)throw Error("Tên trang không được để trống.");
 
 if(data.mode==="normal"){
-
 const links=normalRows.map(x=>({
 name:x.name.value.trim(),
 type:x.type.value,
@@ -1115,20 +1047,12 @@ if(!links.length)throw Error("Trang phải có ít nhất một liên kết.");
 
 for(const x of links){
 if(!x.name)throw Error("Tên liên kết không được để trống.");
-
-if(x.type==="redirect"&&!validURL(x.url)){
-throw Error("URL không hợp lệ.");
-}
-
-if(x.type==="text"&&!x.content.trim()){
-throw Error("Văn bản không được để trống.");
-}
+if(x.type==="redirect"&&!validURL(x.url))throw Error("URL không hợp lệ.");
+if(x.type==="text"&&!x.content.trim())throw Error("Văn bản không được để trống.");
 }
 
 updated.links=links;
-
 }else{
-
 const f=gateFields;
 
 if(!validURL(f.video.value)||!validURL(f.ad.value)||!validURL(f.target.value)){
@@ -1145,50 +1069,39 @@ updated.passwordHash=await hashPassword(f.password.value);
 }
 
 await updateDoc(doc(db,"links",id),updated);
-
 alert("Đã cập nhật thành công!");
 renderHistory(area);
 
 }catch(e){
-
 status.textContent=errorText(e);
 status.className="message error";
-
 }finally{
 save.disabled=false;
 }
-
 },area);
 
 button("QUAY LẠI","secondary full",()=>renderHistory(area),area);
-
 }
 
-/* TRANG CÔNG KHAI - LINK THƯỜNG */
+/* TRANG CÔNG KHAI */
 
 function renderDirect(data){
-
 app.innerHTML="";
 header();
 
 const h=document.createElement("h2");
-h.textContent=data.owner||"LINKGATE";
+h.textContent=data.owner||"TRỌNG MODS GAMES";
 app.appendChild(h);
 
-app.appendChild(message(
-"Chọn liên kết hoặc sao chép văn bản bên dưới.",
-"desc"
-));
+app.appendChild(message("Chọn liên kết hoặc sao chép văn bản bên dưới.","desc"));
 
 const list=document.createElement("div");
 list.className="public-links";
 
 (data.links||[]).forEach(item=>{
-
 if(!item.name)return;
 
 if(item.type==="text"){
-
 const card=document.createElement("div");
 card.className="text-public";
 
@@ -1200,23 +1113,19 @@ content.className="text-content";
 content.textContent=item.content||"";
 
 const copy=button("📋 SAO CHÉP VĂN BẢN","copy full",async()=>{
-
 const ok=await copyText(item.content||"");
-
 if(ok){
 copy.textContent="✓ ĐÃ SAO CHÉP";
 setTimeout(()=>copy.textContent="📋 SAO CHÉP VĂN BẢN",1800);
 }else{
 copy.textContent="KHÔNG THỂ SAO CHÉP";
 }
-
 });
 
 card.append(title,content,copy);
 list.appendChild(card);
 
 }else if(item.type==="redirect"&&validURL(item.url)){
-
 const a=document.createElement("a");
 a.href=item.url;
 a.target="_blank";
@@ -1231,9 +1140,7 @@ arrow.textContent="↗";
 
 a.append(name,arrow);
 list.appendChild(a);
-
 }
-
 });
 
 app.appendChild(list);
@@ -1243,7 +1150,6 @@ footer();
 /* QUẢNG CÁO */
 
 function showAdvertisement(data){
-
 const overlay=$("adOverlay");
 const visit=$("adVisit");
 const count=$("adCount");
@@ -1254,30 +1160,24 @@ visit.href=data.ad;
 overlay.classList.add("show");
 
 let remaining=WAIT_SECONDS;
-
 next.classList.remove("show");
 next.disabled=true;
 bar.style.width="0%";
-
 count.textContent="Vui lòng chờ "+remaining+" giây...";
 
 const timer=setInterval(()=>{
-
 remaining--;
-
 count.textContent=remaining>0
 ?"Vui lòng chờ "+remaining+" giây..."
 :"Đã hoàn tất thời gian chờ.";
 
-bar.style.width=
-((WAIT_SECONDS-remaining)/WAIT_SECONDS*100)+"%";
+bar.style.width=((WAIT_SECONDS-remaining)/WAIT_SECONDS*100)+"%";
 
 if(remaining<=0){
 clearInterval(timer);
 next.classList.add("show");
 next.disabled=false;
 }
-
 },1000);
 
 next.onclick=()=>{
@@ -1287,10 +1187,9 @@ renderGate(data);
 };
 }
 
-/* TRANG LINK VƯỢT */
+/* TRANG XÁC THỰC */
 
 function renderGate(data){
-
 app.innerHTML="";
 header();
 
@@ -1311,17 +1210,14 @@ note.className="note";
 note.textContent="Nhập mật khẩu để tiếp tục đến liên kết đích.";
 
 const pass=field("MẬT KHẨU XÁC THỰC","Nhập mật khẩu...","password");
-
 const status=message("");
 
 box.append(video,note,pass.wrap,status);
 
-const verify=button("✓ XÁC NHẬN & LẤY LINK","success full",async()=>{
-
+const verify=button("✓ XÁC NHẬN & LẤY LIÊN KẾT","success full",async()=>{
 verify.disabled=true;
 
 try{
-
 const hash=await hashPassword(pass.input.value);
 
 if(hash!==data.passwordHash){
@@ -1352,7 +1248,6 @@ status.className="message error";
 }finally{
 verify.disabled=false;
 }
-
 },box);
 
 pass.input.addEventListener("keydown",e=>{
@@ -1363,14 +1258,12 @@ app.appendChild(box);
 footer();
 }
 
-/* MỞ LINK CÔNG KHAI */
+/* MỞ LIÊN KẾT CŨ VÀ MỚI */
 
 async function publicPage(id){
-
 loading("Đang tải liên kết...");
 
 try{
-
 const snap=await getDoc(doc(db,"links",id));
 
 if(!snap.exists()){
@@ -1392,13 +1285,12 @@ data.mode!=="gate"||
 !validURL(data.video)||
 !validURL(data.ad)
 ){
-throw Error("Dữ liệu link vượt không hợp lệ.");
+throw Error("Dữ liệu xác thực không hợp lệ.");
 }
 
 showAdvertisement(data);
 
 }catch(e){
-
 app.innerHTML="";
 header();
 app.appendChild(message(errorText(e),"message error"));
@@ -1408,33 +1300,23 @@ location.href=location.pathname;
 });
 
 footer();
-
 }
 }
 
 /* KHỞI ĐỘNG */
 
 async function start(){
-
 try{
-
 if(linkId){
 await publicPage(linkId);
 }else{
 renderHome();
 }
-
 }catch(e){
-
 console.error(e);
-
 app.innerHTML="";
 header();
-app.appendChild(message(
-"Không thể khởi động: "+errorText(e),
-"message error"
-));
-
+app.appendChild(message("Không thể khởi động: "+errorText(e),"message error"));
 }
 }
 
